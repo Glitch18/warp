@@ -50,7 +50,7 @@ import {
   StaticArrayIndexer,
   TupleFixes,
   DropUnusedSourceUnits,
-  UnreachableFunctionPruner,
+  FunctionPruner,
 } from './passes';
 import { FilePathMangler } from './passes/filePathMangler';
 import { Require } from './passes/builtinHandler/require';
@@ -138,7 +138,7 @@ function applyPasses(ast: AST, options: TranspilationOptions & PrintOptions): AS
     ['B', BuiltinHandler],
     ['Bc', BytesConverter],
     ['Us', UnreachableStatementPruner],
-    ['Fp', UnreachableFunctionPruner],
+    ['Fp', FunctionPruner],
     ['E', ExpressionSplitter],
     ['An', AnnotateImplicits],
     ['Ci', CairoUtilImporter],
